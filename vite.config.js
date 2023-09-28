@@ -20,11 +20,12 @@ export default defineConfig({
             },
         }),
 
-        vuetify({
-            styles: {
-              configFile: 'resources/styles/variables/_vuetify.scss',
-            },
-        }),
+        // vuetify({
+        //     styles: {
+        //       configFile: 'resources/styles/variables/_vuetify.scss',
+        //     },
+        // }),
+        vuetify({ autoImport: true }),
 
         AutoImport({
             eslintrc: {
@@ -35,13 +36,4 @@ export default defineConfig({
             vueTemplate: true,
         }),
     ],
-
-    define: { 'process.env': {} },
-
-    optimizeDeps: {
-        exclude: ['vuetify'],
-        entries: [
-          './resources/js/**/*.vue',
-        ],
-    },
 });
